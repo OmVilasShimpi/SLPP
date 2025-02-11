@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petitioner Dashboard - SLPP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">SLPP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container mt-4">
+        <h2>Petitioner Dashboard</h2>
+
+        <!-- Create Petition Section -->
+        <div class="mt-4">
+            <h4>Create a New Petition</h4>
+            <form id="createPetitionForm">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Petition Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter petition title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Petition Content</label>
+                    <textarea class="form-control" id="content" rows="4" placeholder="Enter petition content" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Create Petition</button>
+            </form>
+        </div>
+
+        <hr class="mt-5">
+
+        <!-- View Petitions Section -->
+        <h4>All Petitions</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Status</th>
+                    <th>Signatures</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="petitionsTableBody">
+                <!-- Dynamic content will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap and Custom Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
